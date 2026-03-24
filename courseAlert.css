@@ -1,0 +1,146 @@
+
+body { font-family: 'Malgun Gothic', sans-serif; font-size: 12px; margin: 0; background-color: #fff; color: #333; }
+
+/* 헤더 */
+.header { background-color: #004a87; color: white; padding: 0 0 0 20px; display: flex; justify-content: space-between; align-items: center; font-size: 23px; font-weight: bold; height: 50px;}
+.logout { background-color: #4193BC; height: 100%; padding: 0 20px; font-size: 18px; cursor: pointer; display: flex; align-items: center; }
+
+/* 레이아웃 */
+.wrapper { display: flex; min-height: calc(100vh - 40px); background-color: #fff; }
+
+/* 메인 콘텐츠 */
+.main-content { flex: 1; padding: 15px 25px; display: flex; flex-direction: column; }
+
+/* 사용자 정보 상단 바 */
+.user-profile-container { display: flex; border: 1px solid #c5d0d7; margin-bottom: 20px; background-color: #fff; border-top: 2px solid #2c5a9a;}
+.semester-box { background-color: #d9e3ed; color: #2c5a9a; width: 140px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; }
+.info-table-wrapper { flex: 1; }
+.profile-table { width: 100%; border-collapse: collapse; border: none; box-shadow: none; }
+.profile-table th.label { background-color: #f0f4f8; padding: 6px; border: 1px solid #c5d0d7; text-align: right; font-weight: bold; width: 12%;font-size: 12px;}
+.profile-table td.value { padding: 6px; border: 1px solid #c5d0d7; background-color: #fff; width: 21%; text-align: left; font-weight: bold;}
+
+/* 하단 영역 컨테이너  */
+.bottom-content-container { display: flex; flex: 1; }
+
+/* 사이드바 */
+.sidebar { width: 180px; padding: 0 10px 10px 0; background-color: transparent; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li { padding: 10px 15px; border-bottom: 1px dotted #ccc; cursor: pointer; color: #666; font-size: 11px; }
+.sidebar li.active { color: #004a87; font-weight: bold; }
+
+/* 오른쪽 본문 콘텐츠 영역 */
+.main-section { flex: 1; padding-left: 15px; }
+.main-title { color: #004a87; font-size: 16px; margin-top: 0; margin-bottom: 20px; }
+.section-subtitle { color : #2B9DB0; font-weight: bold; margin-bottom: 8px; font-size: 13px; }
+
+/* 수강신청용 표 스타일 */
+table { width: 100%; border-collapse: collapse; background: white; border-top: 2px solid #004a87; }
+th { background-color: #ECF3FA; border: 1px solid #ddd; padding: 8px; font-size: 11px; color : #013056;}
+td { border: 1px solid #ddd; padding: 6px; text-align: center; font-size: 11px; }
+#course-list td { font-weight: bold;}
+#my-course-list td { font-weight: bold;}
+
+/* 버튼 및 강조 스타일 */
+.btn-ctrl { padding: 1px 5px; cursor: pointer; border: 1px solid #004a87; background: white; color: #004a87; border-radius: 2px; font-size: 10px; }
+.full-text { color: #dc3545; font-weight: bold; }
+.reg-btn { background: #eee; border: 1px solid #ccc; padding: 3px 8px; border-radius: 2px; cursor: pointer; font-size: 11px; }
+.reg-btn.active { background: #004a87; color: white; border: none; }
+
+/* 필터 컨테이너 */
+.filter-container {
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+/* 라디오 버튼 */
+.radio-group {
+    background-color: #EEEEEE;
+    padding: 8px 15px;         
+    margin-bottom: 10px;          
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label { 
+    margin-right: 25px; 
+    color: #333; 
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input { 
+    margin-right: 5px; 
+    margin-top: 0;
+}
+
+/* 검색 박스 */
+.search-box {
+    border: 1px solid #EEEFF1;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.search-row {
+    display: flex;
+    align-items: center;
+}
+
+.label-text {
+    font-weight: bold;
+    color: #004a87;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+/* 입력창 및 셀렉트 박스 스타일 */
+input[type="text"], select {
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    font-size: 11px;
+    height: 25px;
+}
+
+.input-disabled {
+    background-color: #eee;
+    color: #777; cursor: not-allowed;
+}
+
+.info-text {
+    font-size: 10px;
+    color: #ff6600;
+    font-weight: bold; 
+    margin-left: 10px;
+}
+
+/* 조회 버튼 */
+.search-btn {
+    margin-left: auto;
+    padding: 5px 25px;
+    background-color: #eee;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    height: 35px;
+}
+.search-btn:hover { background-color: #ddd; }
+
+/* 신청 과목 */
+#my-course-summary tr {
+    background-color: #CFD8E1;
+}
+
+#my-course-summary td {
+    text-align: center;
+    padding: 8px 20px;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+    color: #666;
+}
+
+#total-count, #total-credit {
+    color: #004a87;
+    font-weight: bold;
+}

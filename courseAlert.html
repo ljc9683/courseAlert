@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성결대학교 수강신청</title>
+    <link rel="stylesheet" href="courseAlert.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">성결대학교 수강신청</div>
+        <div class="logout">로그아웃</div>
+    </div>
+
+    <div class="wrapper">
+        <main class="main-content">
+            <div class="user-profile-container">
+                <div class="semester-box">2026 / 1학기</div>
+                <div class="info-table-wrapper">
+                    <table class="profile-table">
+                        <tr>
+                            <th class="label">학번</th>
+                            <td class="value"></td>
+                            <th class="label">성명</th>
+                            <td class="value"></td>
+                            <th class="label">신청가능학점</th>
+                            <td class="value">15 - 18</td>
+                        </tr>
+                        <tr>
+                            <th class="label">학부(과)</th>
+                            <td class="value">컴퓨터공학과</td>
+                            <th class="label">학년</th>
+                            <td class="value">2</td>
+                            <th class="label">조기졸업</th>
+                            <td class="value">비대상</td>
+                        </tr>
+                        <tr>
+                            <th class="label">전공(심화)</th>
+                            <td class="value">컴퓨터공학과</td>
+                            <th class="label">복수전공</th>
+                            <td class="value"></td>
+                            <th class="label">부전공</th>
+                            <td class="value"></td>
+                        </tr>
+                        <tr>
+                            <th class="label">토익점수</th>
+                            <td class="value" colspan="5"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bottom-content-container">
+                <nav class="sidebar">
+                    <ul>
+                        <li>> 공지사항</li>
+                        <li class="active">> 수강신청</li>
+                        <li>> 시간표조회</li>
+                        <li>> 수업계획서 조회</li>
+                    </ul>
+                </nav>
+                <div class="main-section">
+                    <h3 class="main-title">> 수강신청</h3>
+                    <div class="filter-container">
+                        <div class="radio-group">
+                            <label><input type="radio" name="category" checked> 대상과목(전공)</label>
+                            <label><input type="radio" name="category"> 기타(교양,타학부등)</label>
+                            <label><input type="radio" name="category"> 장바구니</label>
+                        </div>
+                        <div class="search-box">
+                            <div class="search-row">
+                                <span class="label-text">학부(과)</span>
+                                <input type="text" value="컴퓨터공학과" readonly class="input-disabled" style="width: 120px;">
+                                <span class="label-text" style="margin-left: 15px;">
+                                    <span style="color: red;">*</span>
+                                    교과명(코드)
+                                </span>
+                                <input type="text" disabled class="input-disabled" style="width: 200px;">
+                                <span class="info-text" >타학년 전공, 교양, 타학부(과) 과목은 기타 선택 후 조회가능</span>
+                                <button class="search-btn">조회</button>
+                            </div>
+                            <div class="search-row" style="margin-top: 10px;">
+                                <span class="label-text">주야구분</span>
+                                <select>
+                                    <option>전체</option>
+                                    <option>주간</option>
+                                    <option>야간</option>
+                                </select>
+                                <span class="label-text" style="margin-left: 15px;">요일</span>
+                                <select>
+                                    <option>전체</option>
+                                    <option>월</option>
+                                    <option>화</option>
+                                    <option>수</option>
+                                    <option>목</option>
+                                    <option>금</option>
+                                </select>
+                                <span class="label-text" style="margin-left: 15px;">이수구분</span>
+                                <select style="width: 80px;">
+                                    <option>전체</option>
+                                    <option>전필</option>
+                                    <option>전선</option>
+                                    <option>교필</option>
+                                    <option>교선</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-container">
+                        <h4 class="section-subtitle"> 대상과목 개설강좌</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>순번</th>
+                                    <th>학년</th>
+                                    <th>이수구분</th>
+                                    <th>학부(과)/전공</th>
+                                    <th>주야</th>
+                                    <th>과목코드</th>
+                                    <th>분반</th>
+                                    <th>과목명</th>
+                                    <th>학점</th>
+                                    <th>교수명</th>
+                                    <th>시간/강의실</th>
+                                    <th>신청인원(조절)</th>
+                                    <th>잔여</th>
+                                    <th>신청</th>
+                                </tr>
+                            </thead>
+                            <tbody id="course-list">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="section-container" style="margin-top: 40px;">
+                        <div style=" display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px;">
+                            <h4 class="section-subtitle" style="margin-bottom: 0;"> 신청과목</h4>
+                            <span style="color: #ff6600; font-size: 11px; font-weight: bold; margin-left: auto; margin-right: 15px;">
+                                타학부 전공에 개설된 전선, 전필과목은 일선으로 신청됩니다.
+                            </span>
+                        </div>
+
+                        <table>
+                            <tbody id="my-course-summary">
+                                <tr>
+                                    <td colspan="12">
+                                        <span>신청과목수 : </span>
+                                        <span id="total-count">0</span>
+                                        <span> 과목 / 신청학점 : </span>
+                                        <span id="total-credit">0</span>
+                                        <span> 학점</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>순번</th>
+                                    <th>학년</th>
+                                    <th>이수구분</th>
+                                    <th>학부(과)/전공</th>
+                                    <th>주야</th>
+                                    <th>과목코드</th>
+                                    <th>분반</th>
+                                    <th>과목명</th>
+                                    <th>학점</th>
+                                    <th>교수명</th>
+                                    <th>시간/강의실</th>
+                                    <th>취소</th>
+                                </tr>
+                            </thead>
+                            <tbody id="my-course-list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="courseAlert.js"></script>
+</body>
+
+</html>
